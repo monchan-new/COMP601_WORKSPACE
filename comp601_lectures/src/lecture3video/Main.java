@@ -1,9 +1,12 @@
 package lecture3video;
 
-import static java.lang.System.out;
+import static java.lang.System.*;
 import java.util.Scanner;
 
 public class Main {
+
+  static Scanner input = new Scanner(System.in);//Use input in multiple methods
+
   public static void main(String[] args) {
     int a = 1;
     if (a == 0);
@@ -27,6 +30,8 @@ public class Main {
     // demoSwitchStatement();
     // userInputValidation();
     discreteUserInput();
+    integerUserInput();
+
 
   }
 
@@ -109,10 +114,8 @@ public class Main {
    */
   static void discreteUserInput(){
     String colour;
-    try(Scanner input = new Scanner(System.in))
-    {
-      boolean done = false;
-      while(done == false)
+    boolean done = false;
+    while(done == false)
       {
         out.print("Choose a colour (red/green/blue): ");
         colour = input.nextLine();
@@ -135,8 +138,23 @@ public class Main {
             break;
         }
       }
-    }
   }
 
+  public static void integerUserInput() {
+    int opt = 0;
+    String str = null;
+    while (true) {
+      out.print("Enter option(1-4): ");
+      str = input.nextLine().trim();
+      if(!str.isEmpty() && str.chars().allMatch(Character::isDigit)) {
+        opt = Integer.parseInt(str);
+        if(opt >=1 && opt <= 4) {
+          break;
+        }
+      } else {
+        out.print("Invalid");
+      }
+    }
+  }
   
 }
