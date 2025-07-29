@@ -10,7 +10,6 @@ public class Car {
   public void setFuelInTank(double fuelInTank) {
     this.fuelInTank = fuelInTank;
   }
-
   public String getLocation() {
     return this.location;
   }
