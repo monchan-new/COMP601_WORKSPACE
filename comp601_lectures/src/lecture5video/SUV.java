@@ -16,4 +16,10 @@ public class SUV extends Car {// "extends" calls for super class
     this.setClearance(clearance);
   }
 
+  @Override public void printCarInfo() {
+    super.printCarInfo();//location and fuel in tank
+    System.out.printf("Clearance: %f \n", this.getClearance());
+
+  }
+
 }
