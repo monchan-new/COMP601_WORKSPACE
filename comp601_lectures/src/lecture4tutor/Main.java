@@ -21,6 +21,7 @@ public class Main {
     darr[1] = 20;
     darr[2] = 30;
     // darr[4] = 40;//error: index out of bounds
+    // double[] darr = new double[] {10,20,30};//Initialize + assign values
     out.println(darr[1]);//20: 
     out.println(Arrays.toString(darr));
 
@@ -30,7 +31,7 @@ public class Main {
     //For-index loop
     for(int i = 0; i < darr1.length; ++i) {//"++i" & "i++"" have the same effect
       darr1[i] = i * 5;
-      // out.printf("%d, %f\n", i, darr1[i]);
+      out.printf("%d, %.1f\n", i, darr1[i]);
     }
     //For-each loop
     for(double e : darr1) {
@@ -46,6 +47,7 @@ public class Main {
      * pros: faster!!, simpler syntax
      * cons: read-only, not partial iteration, forward only
      */
+
     String[] strarr1 = new String[] {"Java", "is", "fun"};//not explicitly specify the size
     for(String e : strarr1) {
       out.println(e);
@@ -59,12 +61,12 @@ public class Main {
         count++;
       }
     }
-    out.println(count);//2
+    out.println("same word count: " + count);//2
 
     //Create empty list of Integer
     List<Integer> intList = new LinkedList<>();//only create start location
-    // List<int> intList2 = new LinkedList<>();//error: list contains only object
-    // List<Integer> intList3 = new ArrayList();//both are okay
+    // List<int>//error: list contains only object
+    // = new ArrayList();//both are okay
     intList.add(10);//allocate empty space; create pointer from start point
     intList.add(20);//allocate any empty sapce; create pointer from 1st elemtn
     intList.add(30);
@@ -77,9 +79,9 @@ public class Main {
     //convert array to list
     String str = "5,10,15,20,25";
     String[] strs = str.split(",");
-    // List<Integer> numList = new LinkedList<>();
-    List<Integer> numList; //numList is null!!
-    numList = new LinkedList<>();//numList is no longer null but size() = 0!!
+    List<Integer> numList = new LinkedList<>();
+    //List<Integer> numList; //numList is null!!
+    //numList = new LinkedList<>();//numList is no longer null but size() = 0!!
     for(String e : strs) {
       numList.add(Integer.parseInt(e));//"5" -> 5
     }
@@ -93,7 +95,10 @@ public class Main {
     out.println("List max is " + biggest);
 
     String[] arr = "Milk,Bread,Aplle,Butter,Cheese".split(",");
-    List<String> items = Arrays.asList(arr);
+    // String[] arr2 = new String[]{"Milk","Bread","Aplle","Butter","Cheese"};// this is more simple
+    // String[] arr3 = {"Milk","Bread","Aplle","Butter","Cheese"};// this is also possible
+    List<String> items = Arrays.asList(arr);//can also use for other object types as "Intger" & "Double"; But list size will be fixed!!
+    // List<String> items2 = new ArrayList<>(Arrays.asList(arr));//can create variable size list
     queryList(items);
   }
 
@@ -114,7 +119,6 @@ public class Main {
     String item = list.get(num-1);
     out.printf("Item #%d: %s", num, item);
   }
-
 
   public static int getMax(List<Integer> list) {
     if(list == null || list.size() == 0)
