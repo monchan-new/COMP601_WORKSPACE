@@ -20,18 +20,25 @@ public class Main {
     // floats.add(3.0);
     // out.println(getListProduct(floats, 1));//6.0
 
-    ObjectRecursion recur = new ObjectRecursion();
-    List<Integer> nums = new LinkedList<>();
-    nums.add(1); nums.add(2); nums.add(3);
-    out.println((recur.getSumIntegers(nums, 0)));
+    // ObjectRecursion recur = new ObjectRecursion();
+    // List<Integer> nums = new LinkedList<>();
+    // nums.add(1); nums.add(2); nums.add(3);
+    // out.println((recur.getSumIntegers(nums, 0)));
 
-    List<MyInteger> objList = new LinkedList<>();
-    objList.add(new MyInteger(1));
-    objList.add(new MyInteger(2));
-    objList.add(new MyInteger(3));
-    out.println(recur.getSumObjects(objList, 0));
-    out.println(recur.getTotalCube(objList, 0));
+    // List<MyInteger> objList = new LinkedList<>();
+    // objList.add(new MyInteger(1));
+    // objList.add(new MyInteger(2));
+    // objList.add(new MyInteger(3));
+    // out.println(recur.getSumObjects(objList, 0));
+    // out.println(recur.getTotalCube(objList, 0));
 
+    List<Worker> workers = new LinkedList<>();
+    workers.add(new Worker(10, 20));
+    workers.add(new Worker(10, 25));
+    workers.add(new Worker(20, 18));
+
+    ObjectRecursion recur2 = new ObjectRecursion();
+    out.println(recur2.getTotalWage(workers, 0));
   }
 
 
@@ -128,10 +135,21 @@ public class Main {
    *    where the calling parameter must progress towards the base case 
    *    (i.e., making the base condition true)
    */
+
 }
 
 
 class ObjectRecursion {
+  public double getTotalWage(List<Worker> list, double wage) {
+    if( list != null && list.size() > 0) {
+    // if( !list.isEmpty()) {
+      List<Worker> sublist = list.subList(1, list.size());
+      return getTotalWage(sublist, wage + list.get(0).getWage());
+    }else {
+      return wage;
+    }
+  }
+
   public int getTotalCube(List<MyInteger> list, int sum) {
      if(list != null && list.size() > 0) {
       List<MyInteger> subList = list.subList(1, list.size());
@@ -148,7 +166,6 @@ class ObjectRecursion {
       return sum;
     }
   }
-
   public int getSumIntegers(List<Integer> list, int sum) {
     if(list != null && list.size() > 0) {
       List<Integer> sublist = list.subList(1, list.size());
@@ -156,6 +173,20 @@ class ObjectRecursion {
     }else {
       return sum;
     }
+  }
+}
+
+class Worker {
+  private double workingHours;
+  private double hourRate;
+
+  public Worker(double workingHours, double hourRate) {
+    this.workingHours = workingHours;
+    this.hourRate = hourRate;
+  }
+
+  public double getWage() {
+    return workingHours * hourRate;
   }
 }
 
