@@ -19,7 +19,7 @@ public class Main {
     // String sound = cat2.getCatSound();
     // out.println(sound);
 
-    Employee emp = new Employee("E1222", 45000);
+    // Employee emp = new Employee("E1222", 45000);
     //[instance_name].[instance_method]
     // emp.displayInfo();
     // emp.payRise();
@@ -31,7 +31,16 @@ public class Main {
     emps.add(new Employee("E003", 512000));
     emps.add(new Employee("E004", 96000));
 
-    // processEmployees(emps);
+    // List<Employee> emps2 = new LinkedList<>(
+    //  Arrays.asList(
+    //     new Employee("E001", 56000),
+    //     new Employee("E002", 156000),
+    //     new Employee("E003", 512000),
+    //     new Employee("E004", 96000)
+    //  )
+    // );
+
+    processEmployees(emps);
     //[class_name].[class_method]
     luckyDraw(emps);
     // Main.luckyDraw(emps);
