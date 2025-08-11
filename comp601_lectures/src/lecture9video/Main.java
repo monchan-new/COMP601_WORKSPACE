@@ -10,6 +10,8 @@ import java.util.*;
 public class Main {
   
   public static void main(String[] args) {
+
+
     // System.out.prinln("Hello," + name);// compile error
     // demo();
 
@@ -21,17 +23,24 @@ public class Main {
     content.add("Bill, 40");
     // content.add("Jack,50");
 
-    // System.out.println(System.getProperty("user.dir"));
+    // System.out.println(System.getProperty("user.dir"));//get file.s folder name
     try {
     FileIOBasics.writeFile(fname, content);
     // fileio.writeFile(fname, content);
-
     FileIOBasics.readFile(fname);
     } catch(IOException ioe) {
       System.out.println("Exception caught: " + ioe.toString());
     }
-
     System.out.println("\n\n Application code carry on ...");
+
+    
+    try {
+      String fname2 = "datafolder/student_data.txt";
+      StudentApp app = new StudentApp(fname2);
+      app.displayStudentList();
+    }catch(IOException ioe) {
+      System.out.println(ioe);
+    }
   }
 
   static void demo() {
@@ -42,7 +51,7 @@ public class Main {
 
     //this loop could cause "index out of bounds" unchecked exception
     for(int i = 0; i < nums.length; i++) {
-    // for(int i = 0; i <= nums.length; i++) 
+    // for(int i = 0; i <= nums.length; i++) {
       System.out.println(nums[i]);
     }
     System.out.println("\n\n code after loop carry on ...");
@@ -50,6 +59,7 @@ public class Main {
 }
 
 class FileIOBasics {
+
   public static void readFile(String filename) throws IOException {
     // Path path = new File(filename).toPath();
     Path path = Paths.get(filename);
@@ -63,9 +73,11 @@ class FileIOBasics {
       } catch(NumberFormatException e) {
         System.out.printf("Name: %s, age: [%s]\n", name, e);
         break;
+        // continue;if proceed to the next input
       }
     }
   }
+
   public static void writeFile(String filename, List<String> data) throws IOException {
   // public void writeFile(String filename, List<String> data) throws IOException {
 

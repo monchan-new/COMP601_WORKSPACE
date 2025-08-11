@@ -5,11 +5,14 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.*;
 public class StudentApp {
+
   private List<Student> students;
+
   public StudentApp(String fn) throws IOException {
     students = new LinkedList<>();
     readStudenData(fn);
   }
+  
   public void readStudenData(String filename) throws IOException {
     Path path = new File(filename).toPath();
     List<String> content = Files.readAllLines(path);
@@ -19,5 +22,9 @@ public class StudentApp {
       students.add(s);
     }
   }
-
+  public void displayStudentList() {
+    for(Student s : students) {
+      System.out.printf("%15s%10s%10.2f\n", s.getName(), s.getID(), s.getGrade());
+    }
+  }
 }
