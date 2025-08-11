@@ -38,20 +38,27 @@ public class GameApp {
         
         int r = rand.nextInt(countryList.size());//[0,5]
         Country selectedCountry = countryList.get(r);
-        out.printf("What's the capital city of %s?", selectedCountry.getName());
-        String answer = input.nextLine();
+        int count = 0;
+        while(count++ < 3) {
+          out.printf("What's the capital city of %s?", selectedCountry.getName());
+          String answer = input.nextLine();
+
+          if(answer.trim().equalsIgnoreCase(selectedCountry.getCapital())) {
+            out.println("Well done!");
+            break;
+          }else {
+            out.printf("Incorrect trial #%d.\n", count);
+          }  
+        }    
         
-        if (answer.trim().equalsIgnoreCase("exit")) {
-              out.println("Goodbye!");
+        out.printf("It's %s\n", selectedCountry.getCapital());  
+        out.printf("%s is a country of %d million.\n", selectedCountry.getName(), selectedCountry.getPopulation());
+
+        out.print("Play again(y/n)?");
+        String answer2 = input.nextLine();
+        if ( !answer2.trim().equalsIgnoreCase("y")) {
               break;
         }
-
-        if(answer.trim().equalsIgnoreCase(selectedCountry.getCapital())) {
-          out.println("Well done!");
-        }else {
-          out.printf("Incorrect. It's %s\n", selectedCountry.getCapital());
-        }
-        out.printf("%s is a country of %d million.\n", selectedCountry.getName(), selectedCountry.getPopulation());        
       }
     }
     

@@ -1,5 +1,5 @@
 New Zealand,Wellington,5
-India,New helhi,1380
+India,New delhi,1380
 Germany,Berlin,83
 Thailand,Bangkok,69
 Greece,Athens,10
