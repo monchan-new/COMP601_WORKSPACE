@@ -1,11 +1,12 @@
 package lecture6tutor;
+
 import static java.lang.System.*;
 import java.util.*;
 
 public class Main {
   public static void main(String[] args) {
     Salesperson sp = new Salesperson("s11", 40000, 10);
-    //call inherited methods from Employee
+    // call inherited methods from Employee
     sp.displayInfo();
     sp.payRise();
     out.println(sp.getSalary());
@@ -27,15 +28,16 @@ public class Main {
     calcDogs(dogs);
 
   }
+
   public static void calcDogs(List<Dog> list) {
-    if( list != null && list.size()>0 ) {
+    if (list != null && list.size() > 0) {
       double total = 0;
-      for( Dog d : list) {
+      for (Dog d : list) {
         total += d.getWeight();
 
       }
       out.printf("Total weight: %.2f\n", total);
-      out.printf("Average weight: %.2f\n", total/list.size());
+      out.printf("Average weight: %.2f\n", total / list.size());
     }
   }
 }

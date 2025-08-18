@@ -1,8 +1,9 @@
 package lecture6tutor;
 import lecture5tutor.Employee;
 
-public class CEO extends Employee{
+public class CEO extends Employee {
   private double profitUp;
+  
   //subclass constructor
   public CEO(String eid, double salary, double profitUp) {
     //System.out.println("Hello"); NG
@@ -11,7 +12,6 @@ public class CEO extends Employee{
     this.setProfitUp(profitUp);
   }
 
-  
   public double getProfitUp() {
     return this.profitUp;
   }
