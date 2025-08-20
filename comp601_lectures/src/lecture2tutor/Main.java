@@ -20,7 +20,7 @@ public class Main{
 
 
   public static void main(String [] args) {
-    printFormat();
+    // printFormat();
     // definitAssignment();
     // implicitExplicit();
     // readString();
@@ -40,7 +40,7 @@ public class Main{
 
   }
   
-  // To assing a value to a variable based on the condition
+  // To assigning a value to a variable based on the condition
   public static void switchExpression(){
     out.print("Enter a number: ");
     int n = input.nextInt();

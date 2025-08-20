@@ -15,7 +15,7 @@ public class Main2 {
 
   public static void m1() {
     out.print("In m1, enter a number: ");
-    int num = Integer.parseInt(input.nextLine());
+    int num = Integer.parseInt(input.nextLine());//Safer way to change to int
     out.println(num);
   }
 

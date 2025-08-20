@@ -32,7 +32,7 @@ public class Main5 {
     // display the title and line
     String fmt = "%-15s%-15s%-15s\n";
     out.printf(fmt, "Meal price", "Tip", "Total amount");
-    String space = String.format("%-35s","");
+    String space = String.format("%-45s","");
     String dash = space.replace(" ", "-");
     out.println(dash);
 

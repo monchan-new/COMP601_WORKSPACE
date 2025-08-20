@@ -9,6 +9,7 @@ public class Main {
     // try with resources statement
     public static void main(String[] args) {
         
+        // by using "try" automatically close Scanner
         try(Scanner input = new Scanner(System.in)) 
         {
             // Read string input
@@ -19,7 +20,7 @@ public class Main {
             // Read Integer input
             out.print("Enter an intger: ");
             int num = input.nextInt();
-            out.printf("Entered number is: %d.\n", num);
+            out.printf("Entered number is: %d\n", num);
 
             // Read float input
             out.printf("enter a float number: ");

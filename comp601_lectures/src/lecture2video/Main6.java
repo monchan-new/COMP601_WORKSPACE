@@ -8,7 +8,7 @@ public class Main6 {
   public static void main(String[] args) {
 
     // <type> <variable_name>
-    int num;//dclare alocal variable "num"
+    int num;//declare a local variable "num"
 
     num = 10;//initialise the variable "num"
     // this is a local vaiable, w/o this leads compile error.
