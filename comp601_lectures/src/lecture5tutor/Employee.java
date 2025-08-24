@@ -13,7 +13,11 @@ public class Employee {
     System.out.printf("ID: %s, salary: %.0f\n", eid, salary);
   }  
   public void payRise() {
-    this.setSalary(salary+1000);
+    this.setSalary(salary + 1000);
+  }
+
+  public String getEmployeeType() {
+    return "generic employee";
   }
 
   
