@@ -16,9 +16,11 @@ public class Main {
     emps.add(e);
 
     demoDynamicBinding(emps);
-    
+
     var emp= getMaxEmp(emps);
     if(emp != null )
+    
+      out.println("=".repeat(20));
       emp.displayInfo();
   }
 
@@ -39,7 +41,7 @@ public class Main {
     displayAll(list);
     for(Employee e : list) {
       out.println(e.getEmployeeType());// dynamic binding
-      e.payRise();
+      e.payRise();// dynamic binding
     }
       out.println("=".repeat(20));
       displayAll(list);
