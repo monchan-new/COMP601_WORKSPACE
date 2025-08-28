@@ -16,6 +16,7 @@ public class Main {
   static Scanner input = new Scanner(System.in);
 
   private static final Random rand = new Random();
+  // the above is not CONSTANT, just static + final
 
   public static void main(String[] args) {
 
@@ -26,6 +27,8 @@ public class Main {
     // out.println(getRandomNumber(low, up));
     // twentyOne();
     repeatTwentyOne();
+
+    input.close();
 
   }
 
@@ -52,7 +55,7 @@ public class Main {
 
     // Game process
     while(true) {
-      out.printf("Your hand is %d. Want a car (y/n): ", player); 
+      out.printf("Your hand is %d. Want a card (y/n): ", player); 
       resp = input.nextLine();
       if(resp.equalsIgnoreCase("y")) {
         card = getRandomNumber(1, 13);
@@ -90,7 +93,7 @@ public class Main {
 
   public static int getRandomNumber(int low, int up) {
     // return new Random().ints(low,up+1).findFirst().getAsInt();
-    return rand.nextInt(up - low + 1) + low;
+    return rand.nextInt(up - low + 1) + low;//random number low to up (0 to up-low + low)
   }
      
 
@@ -122,7 +125,7 @@ public class Main {
     out.println("Enter a string");
     String val = input.nextLine();//"hello"
     out.println(val == "hello");//false because "==" comparing addresses
-    out.println(val.equals("hello"));
+    out.println(val.equals("hello"));//eauals() compares values
     out.println(val.equalsIgnoreCase("HELLO"));
 
     // compare numbers

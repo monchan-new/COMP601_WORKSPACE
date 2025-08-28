@@ -77,7 +77,7 @@ public class Main {
     //partList = original_list.sublist(<start_index_inclusive>, <end_index_exclusive>)
     List<String> partList = list.subList(1, list.size());
     for(String n : partList) {
-      out.println(n);
+      out.print(n + " ");
     }
 
   }
@@ -93,7 +93,7 @@ public class Main {
       out.printf("Index: %d, elment: %s \n", i, words.get(i));
     }
     for(String word : words) {
-      out.println(word);
+      out.print(word + " ");
     }
   }
   /*
@@ -120,7 +120,8 @@ public class Main {
     // convert numAsString to an array of integers
     int[] nums = new int[numAsString.length];
     for(int i = 0; i < nums.length; i++) {
-      nums[i] = Integer.valueOf(numAsString[i].trim());
+      // nums[i] = Integer.valueOf(numAsString[i].trim());
+      nums[i] = Integer.parseInt(numAsString[i].trim());
     }
     for(int row : nums) {
       for(int column : nums) {
@@ -172,7 +173,7 @@ public class Main {
     
     String[] words1 = {"java", "is", "fun"};
     for(String e : words1) {
-      e = "yyy";//need to be changed every elment
+      e = "yyy";//need to be changed all elments
     }
     for(String e : words1) {
       out.println(e);//cannot change the content of array elements

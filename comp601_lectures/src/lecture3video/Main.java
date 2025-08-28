@@ -9,9 +9,7 @@ public class Main {
 
   public static void main(String[] args) {
     int a = 1;
-    if (a == 0);
-    // if (a == 0);// do not put a semi=colon at the end of if header
-                   // if statement ends.
+    if (a == 0);// if (a == 0);// do not put a semi=colon at the end of if header -> if statement ends.
     {
       out.println("a");
     }
@@ -28,10 +26,12 @@ public class Main {
 
     // variableScopeLifetime();
     // demoSwitchStatement();
-    // userInputValidation();
+    userInputValidation();
     discreteUserInput();
     integerUserInput();
 
+    
+    input.close();//close Scanner object 
 
   }
 
@@ -41,7 +41,7 @@ public class Main {
 
     if (x == 10)
     {
-      // out.print(y);//error, no definition
+      // out.println(y);//error, no definition
       out.println(x);//ok
       int y = 20;
       out.println(y);//ok
@@ -56,13 +56,15 @@ public class Main {
    * to the season name, and display a correspoinding message about
    * the season.
    */
-  static void demoSwitchStatement(){
+  static void demoSwitchStatement() { 
     String season;
-    try(Scanner input = new Scanner(System.in))
-    {
-      out.print("Enter season name (winter/speing/summer/autumn): ");
-      season = input.nextLine();
-    }
+    // try(Scanner input = new Scanner(System.in))
+    // {
+    //   out.print("Enter season name (winter/speing/summer/autumn): ");
+    //   season = input.nextLine();
+    // }
+    out.print("Enter season name (winter/spring/summer/autumn): ");
+    season = input.nextLine();
     switch(season.toLowerCase())
     {
       case "winter":
@@ -92,19 +94,20 @@ public class Main {
   */
   static void userInputValidation(){
     double score;
-    try(Scanner input = new Scanner(System.in))
-    {
+    // try(Scanner input = new Scanner(System.in))
+    // {
       while(true)
       {
-        out.print("Enter a score(1-100, inclusive): ");
+        out.print("Enter a score(0-100, inclusive): ");
         score = input.nextDouble();
+        input.nextLine();//to discard "return" key
         if(score >= 0 && score <= 100)
           break;//to stope the while loop
         else
           out.println("Invalid. Try again.");
       }//end of while
-    }//end of try
-    out.printf("Valid score received: %.1f", score);
+    // }//end of try
+    out.printf("Valid score received: %.1f\n", score);
   }
 
   /*
@@ -146,14 +149,26 @@ public class Main {
     while (true) {
       out.print("Enter option(1-4): ");
       str = input.nextLine().trim();
-      if(!str.isEmpty() && str.chars().allMatch(Character::isDigit)) {
+      try {
         opt = Integer.parseInt(str);
         if(opt >=1 && opt <= 4) {
           break;
+        }else {
+          out.println("Out of range(1-4)");
         }
-      } else {
-        out.print("Invalid");
+      }catch(NumberFormatException e) {
+        out.println("Invalid integer");
       }
+      // if(!str.isEmpty() && str.chars().allMatch(Character::isDigit)) {
+      //   opt = Integer.parseInt(str);
+      //   if(opt >=1 && opt <= 4) {
+      //     break;
+      //   } else {
+      //     out.println("Out of range(1-4)");
+      //   }
+      // } else {
+      //   out.println("Invalid");
+      // }
     }
   }
   
