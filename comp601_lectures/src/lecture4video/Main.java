@@ -52,14 +52,15 @@ public class Main {
     // demoList();
 
     List<String> names = new LinkedList<>();
-    names.add("Loy");
-    names.add("Jack");
-    names.add("Marrk");
-    names.add("Sunny");
-    names.add("bill");
+    // names.add("Loy");
+    // names.add("Jack");
+    // names.add("Marrk");
+    // names.add("Sunny");
+    // names.add("bill");
     // displaySublist(names);
 
     String[] strArray = new String[] {"Aa", "Bb", "Cc"};
+    // String[] strArray = {"Aa", "Bb", "Cc"};
     String str = "bb";
     out.println(containsIgnoreCase(Arrays.asList(strArray), str));
     out.println(containsIgnoreCase2(strArray, str));
@@ -154,7 +155,7 @@ public class Main {
     // int[] nums = new int[5];
     // nums[0] = 10;
     for(int i = 0; i < nums.length; i++) {
-    // for(int i = 0; i <= nums.length - 1; i++) {
+    // for(int i = 0; i <= nums.length; i++) {
       out.println(nums[i]);
     }
     for(int n : nums) {

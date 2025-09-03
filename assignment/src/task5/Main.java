@@ -15,6 +15,14 @@ public class Main {
     notes.add(new Note("B", 34));
     notes.add(new Note("C", 53));
 
+    // List<Note> notes2 = new LinkedList<>(
+    // Arrays.asList(
+    //     new Note("E001", 56000),
+    //     new Note("E002", 156000),
+    //     new Note("E003", 512000),
+    //     new Note("E004", 96000)
+    //  ));
+
     //print out notes list and total duration
     processNotes(notes);
   }

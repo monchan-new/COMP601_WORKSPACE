@@ -11,8 +11,8 @@ public class Main {
     // out.println(cat1.getColour());
 
     // Cat cat2 = new Cat("black");
-    // // out.println(cat2.getColour());
-    // out.println(cat1.getColour());
+    // out.println(cat2.getColour());
+    // // out.println(cat1.getColour());
 
     // cat1.meow();
     // cat2.meow();
@@ -45,7 +45,7 @@ public class Main {
     luckyDraw(emps);
     // Main.luckyDraw(emps);
   }
-  //hits helps with Task10
+  //this helps with Task10
   public static void luckyDraw(List<Employee> list) {
     if(list == null || list.size() == 0) return;
     int c1 = 0, c2 = 0, c3 = 0, r;

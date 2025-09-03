@@ -23,7 +23,8 @@ public class Main {
     // darr[4] = 40;//error: index out of bounds
     // double[] darr = new double[] {10,20,30};//Initialize + assign values
     out.println(darr[1]);//20: 
-    out.println(Arrays.toString(darr));
+    out.println(Arrays.toString(darr));//print array's content as a string
+    // out.println(darr);//print only object name
 
     out.print("Enter array size: ");// ex. 3
     int size = input.nextInt();
@@ -68,7 +69,7 @@ public class Main {
     // List<int>//error: list contains only object
     // = new ArrayList();//both are okay
     intList.add(10);//allocate empty space; create pointer from start point
-    intList.add(20);//allocate any empty sapce; create pointer from 1st elemtn
+    intList.add(20);//allocate any empty sapce; create pointer from 1st elemnt
     intList.add(30);
     out.println(intList.get(0));//10
     out.println(intList.get(1));//20
@@ -94,7 +95,7 @@ public class Main {
     int biggest = getMax(numList);
     out.println("List max is " + biggest);
 
-    String[] arr = "Milk,Bread,Aplle,Butter,Cheese".split(",");
+    String[] arr = "Milk,Bread,Apple,Butter,Cheese".split(",");
     // String[] arr2 = new String[]{"Milk","Bread","Aplle","Butter","Cheese"};// this is more simple
     // String[] arr3 = {"Milk","Bread","Aplle","Butter","Cheese"};// this is also possible
     List<String> items = Arrays.asList(arr);//can also use for other object types as "Intger" & "Double"; But list size will be fixed!!

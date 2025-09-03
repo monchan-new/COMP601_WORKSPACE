@@ -4,7 +4,8 @@ import java.util.*;
 
 public class Main {
   public static void main(String[] args) {
-    List<LeafyGreen> veges = new LinkedList<>();
+    // List<LeafyGreen> veges = new LinkedList<>();
+    List<Vegetable> veges = new LinkedList<>();
     veges.add(new LeafyGreen(10, 3.5, "Cabbage"));
     veges.add(new LeafyGreen(5, 2.94, "Lettuce"));
     veges.add(new LeafyGreen(20, 5.45, "Broccoli"));
@@ -20,22 +21,26 @@ public class Main {
 
   }
 
-  public static void calculateStatus(List<LeafyGreen> veges) {
+  // public static void calculateStatus(List<LeafyGreen> veges) {
+  public static void calculateStatus(List<Vegetable> veges) {
     double totalCost = 0;
     double cabbageWeight = 0;
     double broccoliWeight = 0;
     double lettuceWeight = 0;
     double othersWeight = 0;
-    for(LeafyGreen v : veges) {
+    for(Vegetable v : veges) {
       double weight = v.getWeight();
       double cost = weight * v.getPrice();
       totalCost += cost;
-      switch(v.getType()) {
+      // switch(v.getType()) {
+    if (v instanceof LeafyGreen) {
+      switch(((LeafyGreen)v).getType()) {
         case "Cabbage": cabbageWeight += weight; break;
         case "Broccoli": broccoliWeight += weight; break;
         case "Lettuce": lettuceWeight += weight; break;
         default: othersWeight += weight; break;
       }
+    }
 
       // String msg = switch(v.getType()) {
       //   case "Cabbage" -> { cabbageWeight += weight; yield "Cabbage weight = " + cabbageWeight;

@@ -5,16 +5,16 @@ import java.util.*;
 
 public class Main {
   public static void main(String[] args) {
-    Salesperson sp = new Salesperson("s11", 40000, 10);
-    // call inherited methods from Employee
-    sp.displayInfo();
-    sp.payRise();
-    out.println(sp.getSalary());
+    // Salesperson sp = new Salesperson("s11", 40000, 10);
+    // // call inherited methods from Employee
+    // sp.displayInfo();
+    // sp.payRise();
+    // out.println(sp.getSalary());
 
-    CEO ceo = new CEO("c11", 100000, 0.25);
-    ceo.displayInfo();
-    ceo.payRise();
-    out.println(ceo.getSalary());
+    // CEO ceo = new CEO("c11", 100000, 0.25);
+    // ceo.displayInfo();
+    // ceo.payRise();
+    // out.println(ceo.getSalary());
 
     Bird bd = new Bird("Birty", "yellow");
     Dog dg = new Dog("Daisy", 5.5);

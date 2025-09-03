@@ -34,9 +34,9 @@ public class Main {
         car03 = new MPV("Auckland", 100, 7);
 
         //polimorphism(many forms): treat different classes in the same interface: ex) can call various subclass' overidden methods in the same manner (by dynamic binding)
-        car01.printCarInfo();
-        car02.printCarInfo();
-        car03.printCarInfo();
+        // car01.printCarInfo();
+        // car02.printCarInfo();
+        // car03.printCarInfo();
 
         List<Car> cars = new LinkedList<>();
         cars.add(new Car("Auckland", 100));
