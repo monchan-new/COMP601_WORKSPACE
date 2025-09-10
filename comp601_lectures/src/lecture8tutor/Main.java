@@ -14,10 +14,10 @@ public class Main {
     // n = 5;
     // launch(n);
 
-    List<Integer> nums = new LinkedList<>();
-    nums.add(4); nums.add(5); nums.add(6);
+    // List<Integer> nums = new LinkedList<>();
+    // nums.add(4); nums.add(5); nums.add(6);
     // out.println(sum(nums));
-    // int[] total = new int[]{0};//need to use reference-type variable
+    int[] total = new int[]{0};//need to use reference-type variable; it means the array of the length = 1 & initial value = 0.
     // sum2(total, nums);
     // out.println(total[0]);
     // int total2 = sum3(nums, 0);
@@ -54,7 +54,8 @@ public class Main {
     out.printf("Toasting piece %d. \n", c);//msg
     //puase
     try {
-      TimeUnit.SECONDS.sleep(1); 
+      // TimeUnit.SECONDS.sleep(1); 
+      Thread.sleep(1000); 
     }catch(Exception e) {}
     toaster(n-1, c+1);
   }
@@ -80,6 +81,7 @@ public class Main {
       if (list == null || index >= list.size()) return 0;
       return list.get(index) + sum3(list, index + 1);
   }
+
   public static void sum2(int[] total, List<Integer> list) {
   //break case
   if(list == null || list.size() == 0) return;
@@ -88,6 +90,7 @@ public class Main {
   total[0] += list.get(0);
   sum2(total, sub);
   }
+
   public static int sum(List<Integer> list) {
     //break case
     if(list == null || list.size() == 0) return 0;

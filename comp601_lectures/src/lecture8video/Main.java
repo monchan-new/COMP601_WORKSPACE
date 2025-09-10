@@ -75,13 +75,14 @@ public class Main {
    * Tail factorial
    * 
    * fac(5) = 5 x 4 x 3 x 2 x 1 
-   * (recursive) = 5 x fac(4); total *= 5 (initial value of total = 1) 
-   *             = 5 x (4 x fac(3)); total *= 4
-   *             = 5 x (4 x (3 x fac(2))); total *= 3
-   *             = 5 x (4 x (3 x (2 x fac(1)))); total *= 2
-   *             = 5 x (4 x (3 x (2 x (1 x fac(0))))); total *= 1
-   * (base) fac(0) = 1 -> total *= 1; return total 
-   * 
+   * (recursive) 
+   * n=5; call fac(4) + total *= 5 (initial value of total = 1) 
+   * n=4; call fac(3) + total *= 4
+   * n=3; call fac(2) + total *= 3
+   * n=2; call fac(1) + total *= 2
+   * n=1; call fac(0) + total *= 1
+   * (base) 
+   * return total 
    */
   public static int tailFactorial(int n, int fac) {
     if(n > 0) 
@@ -123,7 +124,6 @@ public class Main {
     {
       out.println(n);
       countdown(n - 1);
-      // countdown(n);//Incorrect calling condition
       // countdown(n);//Incorrect calling condition
     }
   }
@@ -198,9 +198,9 @@ class MyInteger {
   public int getNumber() {
     return number;
   }
-  public void setNumber(int number) {
-    this.number = number;
-  }
+  // public void setNumber(int number) {
+  //   this.number = number;
+  // }
   public int getCube() {
     return number*number*number;
   }

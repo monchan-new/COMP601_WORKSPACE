@@ -56,6 +56,6 @@ public class Main {
     }
     System.out.println("\n\nSample run output part 2:");
     System.out.printf("There are %d Rectangle objects with overlapping colour between the two arrays\n", countColors);
-    System.out.printf("There are %d Rectangle objects with overlapping colour between the two arrays\n", countPerimeter);
+    System.out.printf("There are %d Rectangle objects with overlapping perimeter between the two arrays\n", countPerimeter);
   }
 }

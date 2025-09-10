@@ -6,6 +6,10 @@ import static java.lang.System.*;
 
 public class Main {
   public static void main(String[] args) {
+
+    // PostIt it = new PostIt(200,300,"blue");
+    // out.println(it.getColour()+it.getLength()+it.getWidth());
+
     // demo subtype polymorphism
     List<Employee> emps  = new LinkedList<>();
     var sp = new Salesperson("s11", 40000, 10);
