@@ -3,6 +3,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.*;
 public class StudentApp {
 
@@ -14,12 +15,14 @@ public class StudentApp {
   }
   
   public void readStudenData(String filename) throws IOException {
-    Path path = new File(filename).toPath();
+    // Path path = new File(filename).toPath();
+    Path path = Paths.get(filename);
     List<String> content = Files.readAllLines(path);
     for(String line : content) {
       String[] items = line.split(",");
-      Student s = new Student(items[0], items[1], Double.valueOf(items[2]));
-      students.add(s);
+      // Student s = new Student(items[0], items[1], Double.valueOf(items[2]));
+      // students.add(s);
+      students.add(new Student(items[0], items[1], Double.valueOf(items[2])));
     }
   }
   public void displayStudentList() {

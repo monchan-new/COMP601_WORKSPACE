@@ -6,12 +6,13 @@ import java.io.*;//Exception
 public class BoatApp {
   Scanner input = new Scanner(in);
   List<Boat> boats;
-  public List<Boat> getBoats() {//For safety, create only getter(readonly)
-    return boats;
-  }
 
   public BoatApp(String filename) throws IOException {
     readData(filename);
+  }
+  
+  public List<Boat> getBoats() {
+    return boats;
   }
 
   public void searchByPlate() {

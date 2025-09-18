@@ -15,21 +15,23 @@ public class Main {
     // System.out.prinln("Hello," + name);// compile error
     // demo();
 
-    // FileIOBasics fileio = new FileIOBasics();
+    
     String fname = "datafolder/sample_data.txt";
     List<String> content = new LinkedList<>();
     content.add("John, 20");
     content.add("Alan, 30");
     content.add("Bill, 40");
-    // content.add("Jack,50");
+    content.add(" Jack,50 ");
 
-    // System.out.println(System.getProperty("user.dir"));//get file.s folder name
+    // System.out.println(System.getProperty("user.dir"));//get job execution folder name (= root project directory)
+
+    // FileIOBasics fileio = new FileIOBasics();// no need to instantiate coz only static methods are used
     try {
     FileIOBasics.writeFile(fname, content);
     // fileio.writeFile(fname, content);
     FileIOBasics.readFile(fname);
     } catch(IOException ioe) {
-      System.out.println("Exception caught: " + ioe.toString());
+      System.out.println("IO Exception caught: " + ioe.toString());
     }
     System.out.println("\n\n Application code carry on ...");
 
@@ -39,7 +41,7 @@ public class Main {
       StudentApp app = new StudentApp(fname2);
       app.displayStudentList();
     }catch(IOException ioe) {
-      System.out.println(ioe);
+      System.out.println("IO Exception caught: " + ioe);
     }
   }
 

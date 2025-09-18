@@ -12,7 +12,7 @@ public class Main {
       showFleet(fleet);
       showFleet(app.getOldestBoat());
       app.searchByPlate();
-      out.println(getTotalFuel(fleet));
+      out.println("Total fuel = " + getTotalFuel(fleet));
     }catch(IOException e) {
       out.println(datafile + " doesn't exist");
     }
