@@ -1,4 +1,7 @@
 import java.util.*;
+
+import task10.AudioBook;
+
 import java.io.*;
 import java.nio.file.*;
 import static java.lang.System.*;
@@ -37,7 +40,8 @@ public class BoatApp {
 					break;
 				case 4: 
 					out.println("Bye");
-					break;
+					// break;
+          return;
 			}			
 		}//end of while
     }
@@ -53,20 +57,74 @@ public class BoatApp {
 
     public void readData(String filename) throws IOException {
       // task 10/9
+      Path path = Paths.get(filename);
+      List<String> alllines = Files.readAllLines(path);
+      for(String line : alllines) {
+        String[] items = line.split(",");
+        try{
+          boats.add(new Boat(items[0].trim(), Double.valueOf(items[1]), Integer.valueOf(items[2])));
+        }catch(NumberFormatException e) {
+          out.printf("Boat name: %s[%s]", items[0], e);
+        }
+      }
     }
     public void displayBoatWithMostFuel(){
       // task 10
+      if(boats.isEmpty()) return;
+
+      List<Boat> mostFuelBoats = new LinkedList<>();
+      Boat firsBoat = boats.get(0);
+      mostFuelBoats.add(firsBoat);
+      double mostFuel = firsBoat.getFuelLeft();
+      for(int i = 1; i < boats.size(); i++) {
+        double ifuel = boats.get(i).getFuelLeft();
+        if(ifuel > mostFuel) {
+          mostFuelBoats.clear();
+          mostFuelBoats.add(boats.get(i));
+          mostFuel = ifuel;
+        }else if( ifuel == mostFuel) {
+          mostFuelBoats.add(boats.get(i));
+        }
+      }
+      out.printf("%-30s%-10s%-10s\n", "Plate", "FuelLeft", "Year");
+      out.println("-".repeat(50));
+      for(Boat b : mostFuelBoats) {
+        out.printf("%-30s%-10.1f%-10d\n", b.getPlate(), b.getFuelLeft(), b.getYear());
+      }
+      out.println("");
     }
     public void searchByPlate() {
       // task 9 + taks 10 (Main) 
       // use ".trim().equalsIgnoreCase()"
       // or "toLowerCase/toUpperCase"
+      out.printf("Input Plate name: ");
+      String answer = input.nextLine();
+      int count = 0;
+      for(Boat b : boats) {
+        if( answer.trim().equalsIgnoreCase(b.getPlate())) {
+          b.displayInfo();   
+          count++;
+          break;   
+        }  
+      }
+      if(count == 0)
+        out.printf("no boat with %s found.", answer);
+
     }
     public double getTotalFuelLeft(List<Boat> list, int i) {
 		//Recursively calculate total fuel left in all boats.
-    
       // task 8(recursive)
-      double x = 0;
-      return x;
+      // if(list != null && list.size()>0) {
+      //   List<Boat> sublist = list.subList(1, list.size());
+      //           return list.get(0).getFuelLeft() + getTotalFuelLeft(sublist, i);
+      // }else {
+      //   return 0;
+      // }
+
+      //break case
+      if(i >= list.size()) return 0;
+      //recursive case
+      return list.get(i).getFuelLeft() + getTotalFuelLeft(list, i+1);
+
     }
 }

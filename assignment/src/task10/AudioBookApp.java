@@ -47,7 +47,7 @@ public class AudioBookApp {
         shortestBooks.clear();
         shortestBooks.add(bookList.get(i));
         minLength = ilen;
-      }else if( bookList.get(i).getLength() == minLength) {
+      }else if( ilen == minLength) {
         shortestBooks.add(bookList.get(i));
       }
     } 
