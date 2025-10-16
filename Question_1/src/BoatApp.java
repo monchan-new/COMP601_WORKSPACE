@@ -93,8 +93,9 @@ public class BoatApp {
       }
       out.println("");
     }
+
     public void searchByPlate() {
-      // task 9 + taks 10 (Main) 
+      // task 9  
       // use ".trim().equalsIgnoreCase()"
       // or "toLowerCase/toUpperCase"
       out.printf("Input Plate name: ");

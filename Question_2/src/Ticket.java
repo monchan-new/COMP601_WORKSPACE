@@ -16,6 +16,7 @@ public class Ticket {
     return points;
   }
 
+  
   public String getTickno() {
     return this.tickno;
   }

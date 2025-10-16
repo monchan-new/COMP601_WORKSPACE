@@ -1,10 +1,11 @@
 import java.io.IOException;
 import static java.lang.System.*;
 
-public class Main {
+public class Main1 {
   public static void main(String[] args) {
 
     String filename = "datafolder/boat_data.txt";
+    // it needs to be directly under project "COMP601_WORKSPACE" (not under 'Question_1')
 
     // Watercraft boat = new Boat("aa", 20.5, 6);
     // boat.displayInfo();
