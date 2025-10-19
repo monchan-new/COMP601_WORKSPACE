@@ -11,40 +11,42 @@ public class BoatApp {
     List<Boat> boats = new LinkedList<>();
 
     public BoatApp(String filename) throws IOException { 
-        readData(filename);
-        displayMenu();
-		int opt = 0;
-		String str = null;
-		while (true) {
-			out.print("\nSelect an option: ");
-			str = input.nextLine().trim();
-			if(str.isEmpty()) continue;
-			if(str.chars().allMatch(Character::isDigit) == false) {
-				out.println("Please enter a number.");
-				continue;
-			}
-			opt = Integer.parseInt(str);
-			if (opt < 1 || opt > 4) {
-				out.println("Invalid option.");
-				continue;
-			}
-			switch (opt){
-				case 1: 
-					searchByPlate(); 
-					break;
-				case 2: 
-					displayBoatWithMostFuel(); 
-					break;
-				case 3: 
-					out.printf("Total fuel: %.2f", getTotalFuelLeft(boats, 0));
-					break;
-				case 4: 
-					out.println("Bye");
-					// break;
-          return;
-			}			
-		}//end of while
+      readData(filename);
+      displayMenu();
+
+      int opt = 0;
+      String str = null;
+      while (true) {
+        out.print("\nSelect an option: ");
+        str = input.nextLine().trim();
+        if(str.isEmpty()) continue;
+        if(str.chars().allMatch(Character::isDigit) == false) {
+          out.println("Please enter a number.");
+          continue;
+        }
+        opt = Integer.parseInt(str);
+        if (opt < 1 || opt > 4) {
+          out.println("Invalid option.");
+          continue;
+        }
+        switch (opt){
+          case 1: 
+            searchByPlate(); 
+            break;
+          case 2: 
+            displayBoatWithMostFuel(); 
+            break;
+          case 3: 
+            out.printf("Total fuel: %.2f", getTotalFuelLeft(boats, 0));
+            break;
+          case 4: 
+            out.println("Bye");
+            // break;
+            return;
+        }			
+      }//end of while
     }
+
     public void displayMenu(){
         out.println("\n\n*************************************");
         out.println("* Menu                              *");

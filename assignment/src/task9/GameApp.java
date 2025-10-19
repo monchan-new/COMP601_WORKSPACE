@@ -36,11 +36,12 @@ public class GameApp {
       Random rand = new Random();
       while(true) {
         
-        int r = rand.nextInt(countryList.size());//[0,5]
+        int r = rand.nextInt(countryList.size());//6->[0,5]
         Country selectedCountry = countryList.get(r);
         int count = 0;
         while(count++ < 3) {
-          out.printf("What's the capital city of %s?", selectedCountry.getName());
+          // after evaluating 'count < 3', count will add up 
+          out.printf("What's the capital city of %s? ", selectedCountry.getName());
           String answer = input.nextLine();
 
           if(answer.trim().equalsIgnoreCase(selectedCountry.getCapital())) {
