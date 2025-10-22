@@ -35,13 +35,23 @@ public class BoatApp {
   public List<Boat> getOldestBoat() {
     List<Boat> oldest = new LinkedList<>();
     if(boats != null && boats.size() > 0) {
-      int year = boats.get(0).getYear();
+      // int year = boats.get(0).getYear();
+      // for(Boat b : boats) {
+      //   if(b.getYear() < year) {
+      //     year = b.getYear();
+      //     oldest.clear();
+      //   }
+      //   if(b.getYear() == year) {
+      //     oldest.add(b);
+      //   }
+      // }
+      int oldestyear = boats.get(0).getYear();
       for(Boat b : boats) {
-        if(b.getYear() < year) {
-          year = b.getYear();
+        if(b.getYear() < oldestyear) {
           oldest.clear();
-        }
-        if(b.getYear() == year) {
+          oldest.add(b);
+          oldestyear = b.getYear();
+        }else if(b.getYear() == oldestyear) {
           oldest.add(b);
         }
       }

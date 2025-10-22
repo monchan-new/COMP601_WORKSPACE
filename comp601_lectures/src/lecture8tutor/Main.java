@@ -6,39 +6,46 @@ import java.util.concurrent.TimeUnit;// pause in console
 public class Main {
   public static void main(String[] args) {
 
-    // int n = 4;
-    // out.printf("Factorial of %d is %d\n", n, factorial(n));
-    // n = 10;
-    // out.printf("Factorial of %d is %d\n", n, factorial(n));
+    int n = 4;
+    out.printf("Factorial of %d is %d\n", n, factorial(n));
+    n = 10;
+    out.printf("Factorial of %d is %d\n", n, factorial(n));
 
-    // n = 5;
-    // launch(n);
+    n = 5;
+    launch(n);
 
-    // List<Integer> nums = new LinkedList<>();
-    // nums.add(4); nums.add(5); nums.add(6);
-    // out.println(sum(nums));
+    List<Integer> nums = new LinkedList<>();
+    nums.add(4); nums.add(5); nums.add(6);
+    out.println(sum(nums));
     int[] total = new int[]{0};//need to use reference-type variable; it means the array of the length = 1 & initial value = 0.
-    // sum2(total, nums);
-    // out.println(total[0]);
-    // int total2 = sum3(nums, 0);
-    // out.println(total2);
+    sum2(total, nums);
+    out.println(total[0]);
+    int total2 = sum3(nums, 0);
+    out.println(total2);
 
-    // List<Ticket> tickets = new LinkedList<>();
-    // tickets.add(new Ticket("A111", 1245));
-    // tickets.add(new Ticket("A222", 145));
-    // tickets.add(new Ticket("A333", 245));
-    // tickets.add(new Ticket("A444", 2245.65));
-    // out.println(getTotalPoints(tickets));
-    // //use Arrays.asList to set initial values
-    // List<Ticket> tickets2 = Arrays.asList(
-    // new Ticket("A111", 1245),
-    // new Ticket("A222", 145),
-    // new Ticket("A333", 245),
-    // new Ticket("A444", 2245.65)); 
-    // out.println(getTotalPoints2(tickets2, 0));
+    List<Ticket> tickets = new LinkedList<>();
+    tickets.add(new Ticket("A111", 1245));
+    tickets.add(new Ticket("A222", 145));
+    tickets.add(new Ticket("A333", 245));
+    tickets.add(new Ticket("A444", 2245.65));
+    out.println(getTotalPoints(tickets));
+    //use fixed-sized 'Arrays.asList' to set initial values
+    List<Ticket> tickets2 = Arrays.asList(
+    new Ticket("A111", 1245),
+    new Ticket("A222", 145),
+    new Ticket("A333", 245),
+    new Ticket("A444", 2245.65)); 
+    out.println(getTotalPoints2(tickets2, 0));
+    // use non-fixed size 'ArrayList' to set inititial values
+    List<Ticket> tickets3 = new ArrayList<>(Arrays.asList(
+    new Ticket("A111", 1245),
+    new Ticket("A222", 145),
+    new Ticket("A333", 245),
+    new Ticket("A444", 2245.65))); 
+     out.println(getTotalPoints2(tickets3, 0));
 
-    // int total = 8, start = 1;  
-    // toaster(total, start);
+    int total3 = 8, start = 1;  
+    toaster(total3, start);
     int restBread = 8, currentBread = 1;  
     toaster(restBread, currentBread);
 
@@ -52,10 +59,10 @@ public class Main {
     }
     //recursive case
     out.printf("Toasting piece %d. \n", c);//msg
-    //puase
+    //pause
     try {
       // TimeUnit.SECONDS.sleep(1); 
-      Thread.sleep(1000); 
+      Thread.sleep(300); 
     }catch(Exception e) {}
     toaster(n-1, c+1);
   }
@@ -78,7 +85,7 @@ public class Main {
   }
 
   public static int sum3(List<Integer> list, int index) {
-      if (list == null || index >= list.size()) return 0;
+      if (index >= list.size()) return 0;
       return list.get(index) + sum3(list, index + 1);
   }
 

@@ -8,13 +8,14 @@ public class Ticket {
     this.setTickno(tickno);
     this.setPrice(price);
   }
-  //shouldn't use fields coz can't initialize value for fields because fields execute before constructor
-  public int getAirPoints2 = (int)price / 100 * 3;
+  //shouldn't use fields like this coz can't get values from constructor arguments because fields execute before constructor instatiation
+  // public int getAirPoints2 = (int)price / 100 * 3;
   
   public int getAirPoints() {
     int hundreds =  (int)price / 100;
     return hundreds * 3;
   }
+
   public String getTickno() {
     return this.tickno;
   }

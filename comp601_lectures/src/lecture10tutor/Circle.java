@@ -13,6 +13,7 @@ public class Circle extends Shape implements Sidely {
   }  
   @Override
   double getArea() {
+    // because 'getArea' is declared w/o public in Shape class, it needs to be less than 'package default'
     return Math.pow(radius,2) * Math.PI;
   }
   

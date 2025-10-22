@@ -7,8 +7,14 @@ import static java.lang.System.*;
 public class Main {
   public static void main(String[] args) {
 
-    // PostIt it = new PostIt(200,300,"blue");
-    // out.println(it.getColour()+it.getLength()+it.getWidth());
+    PostIt it = new PostIt();
+    PostIt it2 = new PostIt("white");
+    PostIt it3 = new PostIt(200,300);
+    PostIt it4 = new PostIt(200,300, "red");
+    out.println(it.getColour()+it.getLength()+it.getWidth());
+    out.println(it2.getColour()+it2.getLength()+it2.getWidth());
+    out.println(it3.getColour()+it3.getLength()+it3.getWidth());
+    out.println(it4.getColour()+it4.getLength()+it4.getWidth());
 
     // demo subtype polymorphism
     List<Employee> emps  = new LinkedList<>();
@@ -22,8 +28,8 @@ public class Main {
     demoDynamicBinding(emps);
 
     var emp= getMaxEmp(emps);
+    // Employee emp= getMaxEmp(emps);
     if(emp != null )
-    
       out.println("=".repeat(20));
       emp.displayInfo();
   }
@@ -37,7 +43,6 @@ public class Main {
     }
     return maxEmp;
   }
-
 
 
   public static void demoDynamicBinding(List<Employee> list) {

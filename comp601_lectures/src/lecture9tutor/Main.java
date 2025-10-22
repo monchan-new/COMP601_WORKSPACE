@@ -10,8 +10,11 @@ public class Main {
       BoatApp app = new BoatApp(datafile);
       List<Boat> fleet = app.getBoats();
       showFleet(fleet);
+        out.println("\n");
       showFleet(app.getOldestBoat());
+        out.println("\n");
       app.searchByPlate();
+        out.println("\n");
       out.println("Total fuel = " + getTotalFuel(fleet));
     }catch(IOException e) {
       out.println(datafile + " doesn't exist");
