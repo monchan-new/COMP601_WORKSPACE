@@ -85,6 +85,7 @@ class Seal extends Mammal implements SeaBound, LandBound {
   }
 
   public void swim() {
+  // '@override' is unnecessary 
     System.out.println("Seal swimming...");
   }
   public void run() {

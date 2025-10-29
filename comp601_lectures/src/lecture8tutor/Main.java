@@ -17,11 +17,9 @@ public class Main {
     List<Integer> nums = new LinkedList<>();
     nums.add(4); nums.add(5); nums.add(6);
     out.println(sum(nums));
-    int[] total = new int[]{0};//need to use reference-type variable; it means the array of the length = 1 & initial value = 0.
-    sum2(total, nums);
-    out.println(total[0]);
-    int total2 = sum3(nums, 0);
-    out.println(total2);
+    int total = 0;
+    out.println(sum2(total, nums));
+    out.println(sum3(nums, 0));
 
     List<Ticket> tickets = new LinkedList<>();
     tickets.add(new Ticket("A111", 1245));
@@ -89,13 +87,13 @@ public class Main {
       return list.get(index) + sum3(list, index + 1);
   }
 
-  public static void sum2(int[] total, List<Integer> list) {
+  public static int sum2(int total, List<Integer> list) {
   //break case
-  if(list == null || list.size() == 0) return;
+  if(list == null || list.size() == 0) return total;
   //recursive case
   List<Integer> sub = list.subList(1, list.size());
-  total[0] += list.get(0);
-  sum2(total, sub);
+  total += list.get(0);
+  return sum2(total, sub);
   }
 
   public static int sum(List<Integer> list) {

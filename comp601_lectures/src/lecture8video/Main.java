@@ -4,33 +4,33 @@ import java.util.*;
 public class Main {
   
   public static void main(String[] args) {
-    // int n = 5;
-    // countdown(n);
-    // out.println(headFactorial(5));
-    // out.println(tailFactorial(5, 1));
+    int n = 5;
+    countdown(n);
+    out.println(headFactorial(5));
+    out.println(tailFactorial(5, 1));
 
-    // List<Integer> nums = new LinkedList<>();
-    // nums.add(10);
-    // nums.add(20);
-    // nums.add(30);
-    // out.println(getListTotal(nums, 0));//60
-    // List<Double> floats = new LinkedList<>();
-    // floats.add(1.0);
-    // floats.add(2.0);
-    // floats.add(3.0);
-    // out.println(getListProduct(floats, 1));//6.0
+    List<Integer> nums = new LinkedList<>();
+    nums.add(10);
+    nums.add(20);
+    nums.add(30);
+    out.println(getListTotal(nums, 0));//60
+    List<Double> floats = new LinkedList<>();
+    floats.add(1.0);
+    floats.add(2.0);
+    floats.add(3.0);
+    out.println(getListProduct(floats, 1));//6.0
 
-    // ObjectRecursion recur = new ObjectRecursion();
-    // List<Integer> nums = new LinkedList<>();
-    // nums.add(1); nums.add(2); nums.add(3);
-    // out.println((recur.getSumIntegers(nums, 0)));
+    ObjectRecursion recur = new ObjectRecursion();
+    List<Integer> nums2 = new LinkedList<>();
+    nums2.add(1); nums2.add(2); nums2.add(3);
+    out.println((recur.getSumIntegers(nums2, 0)));
 
-    // List<MyInteger> objList = new LinkedList<>();
-    // objList.add(new MyInteger(1));
-    // objList.add(new MyInteger(2));
-    // objList.add(new MyInteger(3));
-    // out.println(recur.getSumObjects(objList, 0));
-    // out.println(recur.getTotalCube(objList, 0));
+    List<MyInteger> objList = new LinkedList<>();
+    objList.add(new MyInteger(1));
+    objList.add(new MyInteger(2));
+    objList.add(new MyInteger(3));
+    out.println(recur.getSumObjects(objList, 0));
+    out.println(recur.getTotalCube(objList, 0));
 
     List<Worker> workers = new LinkedList<>();
     workers.add(new Worker(10, 20));

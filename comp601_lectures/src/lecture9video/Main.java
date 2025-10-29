@@ -18,9 +18,9 @@ public class Main {
     
     String fname = "datafolder/sample_data.txt";
     List<String> content = new LinkedList<>();
-    content.add("John, 20");
-    content.add("Alan, 30");
-    content.add("Bill, 40");
+    content.add("John,20");
+    content.add("Alan, 30 ");
+    content.add("Bill ,40");
     content.add(" Jack,50 ");
 
     // System.out.println(System.getProperty("user.dir"));//get job execution folder name (= root project directory)
@@ -52,8 +52,8 @@ public class Main {
     nums[2] = 30;
 
     //this loop could cause "index out of bounds" unchecked exception
-    for(int i = 0; i < nums.length; i++) {
-    // for(int i = 0; i <= nums.length; i++) {
+    for(int i = 0; i <= nums.length; i++) {
+    // for(int i = 0; i < nums.length; i++) {
       System.out.println(nums[i]);
     }
     System.out.println("\n\n code after loop carry on ...");

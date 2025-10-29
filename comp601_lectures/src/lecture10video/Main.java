@@ -14,7 +14,7 @@ public class Main {
     emps.add(e);
     e = new CEO("C22", 120000, 50);
     emps.add(e);
-    e = new Salesperson("S22", 45000, 15);
+    e = new Salesperson("S22", 45000, 55);
     emps.add(e);
     // List<Employee> emps = new ArrayList<>(Arrays.asList(
     //   new Salesperson("S11", 40000, 10),
