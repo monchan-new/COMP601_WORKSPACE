@@ -1,34 +1,52 @@
+import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
+import static java.lang.System.*;
 
 public class Main {
 
     public static void main(String[] args) {        
 
-      List<Ticket> tickets = new LinkedList<>();
+      try{
 
-      tickets.add(new Ticket("A111", 1240.50));
+            TeamApp app = new TeamApp("team_data.txt");
 
-      tickets.add(new Ticket("A222", 155.8));
+            app.searchTeam();
+            out.println("Number of teams: " + app.countTeams());
+            out.println("Average score: " + app.getAverageScore());
+        }catch(IOException ioe) {
 
-      tickets.add(new Ticket("A333", 245.50));
+           ioe.printStackTrace();
 
-      System.out.printf("Total points: %d", getTotalPoints(tickets));
+        }
 
-    }
 
-    public static int getTotalPoints(List<Ticket> list) {
 
-      //Note, this needs to be a recursive method
 
-      // lecture 8(tutor)
+    //   List<Ticket> tickets = new LinkedList<>();
 
-      // break case
-      if(list == null || list.size() == 0)
-        return 0;
-      // recursive case
-      List<Ticket> subList = list.subList(1, list.size());
-      return list.get(0).getPoints() + getTotalPoints(subList);
+    //   tickets.add(new Ticket("A111", 1240.50));
+
+    //   tickets.add(new Ticket("A222", 155.8));
+
+    //   tickets.add(new Ticket("A333", 245.50));
+
+    //   System.out.printf("Total points: %d", getTotalPoints(tickets));
+
+    // }
+
+    // public static int getTotalPoints(List<Ticket> list) {
+
+    //   //Note, this needs to be a recursive method
+
+    //   // lecture 8(tutor)
+
+    //   // break case
+    //   if(list == null || list.size() == 0)
+    //     return 0;
+    //   // recursive case
+    //   List<Ticket> subList = list.subList(1, list.size());
+    //   return list.get(0).getPoints() + getTotalPoints(subList);
 
     }
 
